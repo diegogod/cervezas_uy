@@ -13,6 +13,16 @@
       <div id="logo">
         <img src="imagenes/logo.png" alt="Logo Cervezas UY" />
       </div>
+      
+
+        <!-- El checkbox "prende y apaga" el menú -->
+ <input type="checkbox" id="menu-toggle" />
+ <!-- Las tres span son las tres líneas hechas con CSS -->
+ <label for="menu-toggle" class="hamburguesa">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
       <nav>
         <ul>
           <li><a href="index.html">Inicio</a></li>
@@ -21,6 +31,9 @@
           <li><a href="eventos.html">Eventos</a></li>
         </ul>
       </nav>
+
+    </header>
+
     </header>
 
     <main>
@@ -36,10 +49,16 @@
       </section>
 
       <section class="intro-guia">
-        <div class="intro-box">
-          <span>🍋</span>
-          <p>Cada estilo tiene su historia, sus ingredientes y sus características. Acá te contamos, en palabras simples, que los hace únicos.</p>
-        </div>
+     <div class="intro-box">
+    <img src="imagenes/lupulo-guia.jpg"
+         alt="Ícono de lúpulo"
+         class="intro-icono">
+
+    <p>
+        Cada estilo tiene su historia, sus ingredientes y sus características.
+        Acá te contamos, en palabras simples, que los hace únicos.
+    </p>
+</div>
       </section>
 
       <section class="lista-estilos">
@@ -130,17 +149,11 @@
     <footer>
       <div id="logo-footer">
         <img src="imagenes/logo.png" alt="Logo Cervezas UY" />
-        <span>Cervezas UY</span>
       </div>
       <div class="footer-redes">
         <a href="#">Instagram</a>
         <a href="#">Contacto</a>
       </div>
-      <nav class="footer-nav">
-        <a href="#">Sobre Cervezas UY</a>
-        <a href="guia.html">Guía de estilos</a>
-        <a href="#">Contacto</a>
-      </nav>
     </footer>
 
   </body>

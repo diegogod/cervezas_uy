@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Cervezas UY</title>
     <link href="css/estilos.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
 
@@ -15,6 +12,16 @@
       <div id="logo">
         <img src="imagenes/logo.png" alt="Logo Cervezas UY" />
       </div>
+      
+
+        <!-- El checkbox "prende y apaga" el menú -->
+ <input type="checkbox" id="menu-toggle" />
+ <!-- Las tres span son las tres líneas hechas con CSS -->
+ <label for="menu-toggle" class="hamburguesa">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
       <nav>
         <ul>
           <li><a href="index.html">Inicio</a></li>
@@ -23,6 +30,7 @@
           <li><a href="eventos.html">Eventos</a></li>
         </ul>
       </nav>
+
     </header>
 
     <main>
@@ -65,12 +73,12 @@
 
           <article class="tarjeta">
             <figure>
-              <img src="imagenes/bimba_bruder.jpg" alt="Bimba Brüder" />
+              <img src="imagenes/liebig.png" alt="Bimba Brüder" />
             </figure>
             <div class="tarjeta-info">
-              <h3>Bimba Brüder</h3>
-              <p class="ubicacion">📍 Ciudad de Paysandú, Paysandú</p>
-              <p>Cervecería artesanal y bar. Pasión, amigos y buena cerveza.</p>
+              <h3>Liebig Craft Brewery </h3>
+              <p class="ubicacion">Fray Bentos, Río Negro</p>
+              <p>Liebig Craft Brewery | Cerveceria artesanal</p>
               <div class="etiquetas">
                 <span>Visitas</span>
                 <span>Bar</span>
@@ -80,12 +88,27 @@
 
           <article class="tarjeta">
             <figure>
-              <img src="imagenes/bimba_bruder.jpg" alt="Bimba Brüder" />
+              <img src="imagenes/jack_beer.jpg" alt="Jack Beer" />
             </figure>
             <div class="tarjeta-info">
-              <h3>Bimba Brüder</h3>
+              <h3>Jack Beer</h3>
               <p class="ubicacion">Ciudad de Paysandú, Paysandú</p>
-              <p>Cervecería artesanal y bar. Pasión, amigos y buena cerveza.</p>
+              <p>Cervecería artesanal y patio cervecero. 8 variedades. </p>
+              <div class="etiquetas">
+                <span>Degustaciones</span>
+                <span>Bar</span>
+              </div>
+            </div>
+          </article>
+
+                    <article class="tarjeta">
+            <figure>
+              <img src="imagenes/cabesas_bier.jpg" alt="Cabesas Bier" />
+            </figure>
+            <div class="tarjeta-info">
+              <h3>Cabesas BIER</h3>
+              <p class="ubicacion">Ciudad de Tacuarembó, Tacuarembó</p>
+              <p>Cervezas que inspiran para que ese sueño que está en tu cabeza, ¡se haga realidad!</p>
               <div class="etiquetas">
                 <span>Degustaciones</span>
                 <span>Bar</span>
@@ -138,9 +161,25 @@
       </section>
 
       <section class="mapa-promo">
-        <span>(Imagen mapa)</span>
+          <div class="mapa-embed">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1578.3796979217188!2d-58.08457172355909!3d-32.306999937424834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95afc95200daf905%3A0x6db7a3d7eda2b0ac!2sBimba%20Br%C3%BCder!5e1!3m2!1ses!2suy!4v1780592825533!5m2!1ses!2suy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
         <a href="#">Explorar cervecerías en el mapa →</a>
       </section>
+
+      <section class="video-presentacion">
+    <div class="seccion-titulo">
+        <h2>La cultura cervecera uruguaya</h2>
+    </div>
+
+    <div class="video-embed">
+        <iframe
+            src="https://www.youtube.com/embed/wKHf8IFnwxA"
+            title="Video sobre cerveza artesanal uruguaya"
+            allowfullscreen>
+        </iframe>
+    </div>
+</section>
 
     </main>
 
