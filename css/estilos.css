@@ -29,6 +29,12 @@ body {
   font-size: 1rem;
 }
 
+.contenedor {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -55,26 +61,90 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   border-bottom: 1px solid var(--gris-claro);
 }
 
 #logo {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
+  flex: 1;  
 }
 
 #logo img {
-  width: 198px;
   height: 38px;
+  width: auto;
 }
 
+
+/* El checkbox no se ve, solo funciona como interruptor */
+#menu-toggle {
+  display: none;
+  position: absolute;  
+}
+
+/* Las tres líneas de la hamburguesa */
+.hamburguesa {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburguesa span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--negro);
+  transition: all 0.3s;
+}
+
+/* Animación al abrir: las líneas se convierten en X */
+#menu-toggle:checked + .hamburguesa span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+#menu-toggle:checked + .hamburguesa span:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-toggle:checked + .hamburguesa span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Menú cerrado por defecto en mobile */
+nav {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+/* Menú abierto cuando el checkbox está marcado */
+#menu-toggle:checked ~ nav {
+  max-height: 300px;
+}
 
 nav ul {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--gris-claro);
+  margin-top: 0.75rem;
 }
 
+nav ul li a {
+  display: block;
+  padding: 0.6rem 0;
+  font-size: 1rem;
+  color: var(--negro);
+}
 
-
+nav ul li a:hover {
+  color: var(--naranja);
+}
 .hero {
   background-image: url('../imagenes/hero_inicio.jpg');
   background-size: cover;
@@ -83,6 +153,9 @@ nav ul {
   display: flex;
   align-items: flex-end;
   padding: 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 1rem;
 }
 
 .hero-texto h1 {
@@ -291,10 +364,15 @@ nav ul {
   font-weight: 700;
 }
 
+.hero-interno {
+  margin: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
 
 .hero-interno figure img {
   width: 100%;
-  height: 180px;
+  height: 300px;
   object-fit: cover;
 }
 
@@ -352,11 +430,15 @@ nav ul {
   font-size: 0.9rem;
 }
 
-
+.hero-ficha {
+  margin: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
 .hero-ficha figure img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+height: 300px;
+object-fit: cover;
 }
 
 .ficha-contenido {
@@ -441,26 +523,28 @@ nav ul {
   border-radius: 4px;
 }
 
-
 .hero-guia {
   position: relative;
+  margin: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
 }
-
 .hero-guia figure img {
   width: 100%;
-  height: 200px;
+  height: 300px;
   object-fit: cover;
 }
 
 .hero-guia-texto {
   background-color: rgba(0,0,0,0.55);
   padding: 1.2rem;
+
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 2;
 }
-
 .hero-guia-texto h1 {
   color: #fff;
   font-size: 1.4rem;
@@ -476,14 +560,23 @@ nav ul {
   padding: 1rem;
 }
 
-.intro-box {
-  display: flex;
-  gap: 0.75rem;
-  align-items: flex-start;
-  background-color: var(--gris-claro);
-  padding: 1rem;
-  border-radius: 6px;
-  border-left: 3px solid var(--naranja);
+.intro-box{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-left: 0.3rem solid var(--naranja);
+    background: rgba(255,255,255,.2);
+    border-radius: 0.75rem;
+}
+
+.intro-icono{
+    width: 4.5rem;
+    height: 4.5rem;
+
+    flex-shrink: 0;
+
+    object-fit: contain;
 }
 
 .intro-box span {
@@ -509,11 +602,17 @@ nav ul {
   align-items: flex-start;
 }
 
-.estilo figure {
-  width: 80px;
-  flex-shrink: 0;
+.estilo figure{
+    flex-shrink: 0;
 }
 
+.estilo figure img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
 .estilo figure img {
   width: 80px;
   height: 80px;
@@ -565,11 +664,15 @@ nav ul {
 
 .hero-eventos {
   position: relative;
+    border-radius: 12px;
+  overflow: hidden;
+  margin: 1rem;
+  
 }
 
 .hero-eventos figure img {
   width: 100%;
-  height: 200px;
+height: 300px;
   object-fit: cover;
 }
 
@@ -580,6 +683,7 @@ nav ul {
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 2;
 }
 
 .hero-eventos-texto h1 {
@@ -650,7 +754,17 @@ nav ul {
   font-size: 0.9rem;
 }
 
+.mapa-embed {
+  width: 100%;
+  margin-bottom: 1rem;
+}
 
+.mapa-embed iframe {
+  width: 100%;
+  height: 300px;
+  display: block;
+  border-radius: 6px;
+}
 
 footer {
   background-color: var(--crema);
@@ -668,8 +782,8 @@ footer {
 }
 
 #logo-footer img {
-  width: 28px;
-  height: 28px;
+  width: 99px;
+  height: 19px;
 }
 
 #logo-footer span {
@@ -698,7 +812,24 @@ footer {
   color: var(--negro);
 }
 
+.video-presentacion{
+    padding: 1.5rem 1rem;
+}
 
+.video-embed{
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.video-embed iframe{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
 
 @media (min-width: 640px) {
 
@@ -720,6 +851,30 @@ footer {
     color: var(--naranja);
   }
 
+  /* En tablet/desktop se oculta la hamburguesa */
+.hamburguesa {
+  display: none;
+}
+
+/* El nav siempre visible, sin animación */
+nav {
+  width: auto;
+  max-height: none;
+  overflow: visible;
+}
+
+nav ul {
+  flex-direction: row;
+  gap: 1.5rem;
+  padding: 0;
+  border-top: none;
+  margin-top: 0;
+}
+
+nav ul li a {
+  padding: 0;
+  font-size: 0.95rem;
+}
   
   .grilla-cervecerias {
     display: grid;
@@ -773,4 +928,52 @@ footer {
     align-items: center;
     padding: 1.5rem 2rem;
   }
+.lista-estilos{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1.5rem;
+}
+  
+}
+
+
+@media (min-width: 1024px) {
+
+  /* DESTACADAS: 4 columnas */
+  .grilla-cervecerias {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 0 2rem;
+  }
+
+  /* Las tarjetas vuelven a comportarse como columna:
+     imagen arriba, info abajo */
+  .tarjeta {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tarjeta figure img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  /* AGENDA: dos columnas con borde */
+  .agenda {
+    margin: 1.5rem 2rem;
+    border: 1px solid var(--gris-claro);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+
+  .lista-eventos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 0;
+  }
+  .lista-estilos{
+    grid-template-columns:repeat(3,1fr);
+}
+
 }
